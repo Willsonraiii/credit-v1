@@ -1014,5 +1014,24 @@ function init(){
 }
 init();
 </script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+  const supabaseUrl = "https://wnjsrdatyaktaaonyvsu.supabase.co";
+  const supabaseKey = "sb_publishable_1wMXSfHeUgLaW3XaLAkV4w_o2kF6myN";
+
+  const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+  console.log("Supabase connected ✔️");
+
+  async function init() {
+    const { data, error } = await supabase.from('customers').select('*');
+
+    console.log("DATA:", data);
+    console.log("ERROR:", error);
+  }
+
+  init();
+</script>
 </body>
 </html>
