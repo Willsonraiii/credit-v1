@@ -1024,14 +1024,14 @@ init();
 
   console.log("Supabase connected ✔️");
 
-  async function init() {
+  async function testSupabase() {
     const { data, error } = await supabase.from('customers').select('*');
 
     console.log("DATA:", data);
     console.log("ERROR:", error);
   }
 
-  init();
+  testSupabase();
 </script>
 </body>
 </html>
